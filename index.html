@@ -1,0 +1,1078 @@
+<title>Dilger Custom Cabinetry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ink: #241C15;
+    --ink-soft: #5B4F42;
+    --ink-faint: #8A7A67;
+    --paper: #ECE3D0;
+    --paper-raised: #E0D4B8;
+    --paper-line: rgba(36,28,21,0.16);
+    --brass: #7C5E2C;
+    --brass-strong: #5E4620;
+    --band-bg: #1E160F;
+    --band-bg-raised: #2A2015;
+    --band-fg: #EEE3CC;
+    --band-fg-soft: #B9A98C;
+    --band-line: rgba(238,227,204,0.16);
+    --band-accent: #C69A55;
+    --band-accent-strong: #E0B36E;
+    --focus: #C69A55;
+    --shadow: 0 18px 40px -22px rgba(20,14,8,0.45);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #ECE3D0;
+      --ink-soft: #C3B69E;
+      --ink-faint: #8F8168;
+      --paper: #171009;
+      --paper-raised: #241B11;
+      --paper-line: rgba(236,227,208,0.14);
+      --brass: #D3A968;
+      --brass-strong: #E7C083;
+      --band-bg: #100B06;
+      --band-bg-raised: #1D160D;
+      --band-fg: #EEE3CC;
+      --band-fg-soft: #A99A80;
+      --band-line: rgba(238,227,204,0.14);
+      --band-accent: #D3A968;
+      --band-accent-strong: #E7C083;
+      --shadow: 0 18px 40px -20px rgba(0,0,0,0.6);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #ECE3D0;
+    --ink-soft: #C3B69E;
+    --ink-faint: #8F8168;
+    --paper: #171009;
+    --paper-raised: #241B11;
+    --paper-line: rgba(236,227,208,0.14);
+    --brass: #D3A968;
+    --brass-strong: #E7C083;
+    --band-bg: #100B06;
+    --band-bg-raised: #1D160D;
+    --band-fg: #EEE3CC;
+    --band-fg-soft: #A99A80;
+    --band-line: rgba(238,227,208,0.14);
+    --band-accent: #D3A968;
+    --band-accent-strong: #E7C083;
+    --shadow: 0 18px 40px -20px rgba(0,0,0,0.6);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  h1, h2, h3 {
+    font-family: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    line-height: 0.95;
+    margin: 0;
+    color: inherit;
+  }
+
+  a { color: inherit; }
+
+  .mono {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display: block;
+    margin: 0 0 0.85rem;
+  }
+
+  .band .eyebrow { color: var(--band-accent); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+
+  html { scroll-padding-top: 84px; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  /* ---------- Nav ---------- */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--paper-line);
+  }
+
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-block: 0.85rem;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .brand-mark {
+    font-family: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .brand-sub {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-top: 0.3rem;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-block: 0.25rem;
+    border-bottom: 1px solid transparent;
+    transition: color 150ms ease, border-color 150ms ease;
+  }
+
+  .nav-links a:hover { color: var(--brass); border-color: var(--brass); }
+
+  .nav-call {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--band-accent);
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.55rem 0.95rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    transition: background 150ms ease;
+  }
+  .nav-links a.nav-call,
+  .nav-links a.nav-call:hover {
+    color: #1E160F;
+    border-bottom-color: transparent;
+  }
+  .nav-call:hover,
+  .nav-call:active {
+    background: color-mix(in srgb, var(--band-accent) 78%, black);
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--paper-line);
+    border-radius: 2px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--ink);
+    flex-shrink: 0;
+  }
+  .nav-toggle svg { width: 20px; height: 20px; }
+
+  @media (max-width: 760px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: inline-flex; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--paper-line);
+      padding: 0.5rem clamp(1.25rem, 4vw, 3rem) 1.25rem;
+    }
+    .nav-links.open a {
+      width: 100%;
+      padding-block: 0.75rem;
+      border-bottom: 1px solid var(--paper-line);
+    }
+    .nav-links.open .nav-call { margin-top: 0.75rem; }
+  }
+
+  /* ---------- Band (dark sections) ---------- */
+  .band {
+    background: var(--band-bg);
+    color: var(--band-fg);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding-block: clamp(3.5rem, 8vw, 6.5rem) clamp(3rem, 6vw, 4.5rem);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(240px, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: end;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.75rem, 3.2vw + 2rem, 5.5rem);
+    font-weight: 900;
+    max-width: 14ch;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.05rem, 0.5vw + 1rem, 1.25rem);
+    color: var(--band-fg-soft);
+    max-width: 46ch;
+    margin: 1.25rem 0 0;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.9rem 1.5rem;
+    border-radius: 2px;
+    transition: transform 150ms ease, background 150ms ease, color 150ms ease, border-color 150ms ease;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .btn:hover { transform: translateY(-2px); }
+  }
+
+  .btn-primary {
+    background: var(--band-accent);
+    color: #1E160F;
+  }
+  .btn-primary:hover { background: var(--band-accent-strong); }
+
+  .btn-ghost {
+    border: 1px solid var(--band-line);
+    color: var(--band-fg);
+  }
+  .btn-ghost:hover { border-color: var(--band-accent); color: var(--band-accent-strong); }
+
+  .hero-card {
+    border: 1px solid var(--band-line);
+    border-radius: 3px;
+    padding: 1.5rem;
+    background: var(--band-bg-raised);
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.7rem;
+    border-bottom: 1px solid var(--band-line);
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.82rem;
+  }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-label {
+    color: var(--band-fg-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+    padding-top: 0.1rem;
+  }
+  .spec-value { text-align: right; color: var(--band-fg); }
+  .spec-value a { text-decoration: none; }
+  .spec-value a:hover { color: var(--band-accent); }
+
+  /* ---------- Joinery divider ---------- */
+  .joinery {
+    height: 14px;
+    background-image:
+      linear-gradient(135deg, transparent 47%, var(--paper-line) 47% 53%, transparent 53%),
+      linear-gradient(45deg, transparent 47%, var(--paper-line) 47% 53%, transparent 53%);
+    background-size: 28px 28px;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+  .band + .joinery, .joinery.on-band {
+    background-image:
+      linear-gradient(135deg, transparent 47%, var(--band-line) 47% 53%, transparent 53%),
+      linear-gradient(45deg, transparent 47%, var(--band-line) 47% 53%, transparent 53%);
+    background-color: var(--band-bg);
+  }
+
+  /* ---------- Section shell ---------- */
+  section { padding-block: clamp(3.5rem, 7vw, 5.5rem); }
+
+  .section-head {
+    max-width: 60ch;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .section-head h2 {
+    font-size: clamp(2rem, 1.6vw + 1.4rem, 3rem);
+    font-weight: 800;
+  }
+
+  [data-reveal] { opacity: 1; }
+  @media (prefers-reduced-motion: no-preference) {
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+
+  .about-lede {
+    font-size: clamp(1.4rem, 1vw + 1.1rem, 1.9rem);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .about-body p {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin: 0 0 1.1rem;
+  }
+
+  .about-sign {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--brass);
+    margin-top: 1.5rem;
+  }
+
+  .credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
+    list-style: none;
+    padding: 0;
+  }
+  .credentials li {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--paper-line);
+    color: var(--ink-soft);
+    padding: 0.5rem 0.85rem;
+    border-radius: 2px;
+  }
+
+  /* ---------- Services ---------- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .service-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--paper-line);
+    border-radius: 3px;
+    padding: 1.75rem;
+  }
+
+  .service-num {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: var(--brass);
+    letter-spacing: 0.08em;
+  }
+
+  .service-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 0.6rem;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin: 0.6rem 0 0;
+  }
+
+  /* ---------- Reviews ---------- */
+  .reviews-empty {
+    background: var(--paper-raised);
+    border: 1px dashed var(--paper-line);
+    border-radius: 4px;
+    padding: clamp(2.25rem, 5vw, 3.5rem);
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.35rem;
+    margin-bottom: 1.25rem;
+  }
+  .stars svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: var(--ink-faint);
+    stroke-width: 1.4;
+  }
+
+  .reviews-empty h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .reviews-empty p {
+    color: var(--ink-soft);
+    max-width: 42ch;
+    margin: 0.75rem auto 0;
+  }
+
+  /* ---------- Contact / Quote ---------- */
+  .quote-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 1.05fr);
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+    align-items: center;
+  }
+
+  .quote-heading {
+    font-size: clamp(2.25rem, 1.8vw + 1.8rem, 3.75rem);
+    font-weight: 900;
+    max-width: 16ch;
+  }
+
+  .quote-sub {
+    color: var(--band-fg-soft);
+    font-size: 1.05rem;
+    max-width: 46ch;
+    margin: 1.1rem 0 0;
+  }
+
+  .quote-rows {
+    margin-top: 2.25rem;
+    border-top: 1px solid var(--band-line);
+  }
+
+  .quote-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-block: 1.15rem;
+    border-bottom: 1px solid var(--band-line);
+  }
+
+  .quote-row svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    stroke: var(--band-accent);
+    fill: none;
+  }
+
+  .quote-row-label {
+    display: block;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--band-fg-soft);
+    margin-bottom: 0.35rem;
+  }
+
+  .quote-row-value {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--band-fg);
+    line-height: 1.35;
+  }
+  .quote-row-value a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .quote-row-value a:hover { border-color: var(--band-accent); }
+
+  /* Deliberately fixed light card, constant in both themes for contrast against the dark band */
+  .quote-card {
+    --quote-bg: #F1E9D8;
+    --quote-fg: #241C15;
+    --quote-muted: #6B5D4B;
+    --quote-border: rgba(36,28,21,0.18);
+    --quote-field-bg: #FBF7EE;
+    --quote-accent: #7C5E2C;
+    --quote-accent-strong: #5E4620;
+    background: var(--quote-bg);
+    color: var(--quote-fg);
+    border-radius: 4px;
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    box-shadow: 0 24px 50px -24px rgba(0,0,0,0.55);
+  }
+
+  .quote-card .eyebrow { color: var(--quote-accent); margin-bottom: 1.1rem; }
+
+  .quote-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  .quote-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .quote-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .quote-field label {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--quote-muted);
+  }
+
+  .quote-field input,
+  .quote-field select,
+  .quote-field textarea {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.95rem;
+    color: var(--quote-fg);
+    background: var(--quote-field-bg);
+    border: 1px solid var(--quote-border);
+    border-radius: 2px;
+    padding: 0.7rem 0.85rem;
+    width: 100%;
+  }
+  .quote-field textarea { resize: vertical; min-height: 110px; }
+  .quote-field input:focus,
+  .quote-field select:focus,
+  .quote-field textarea:focus {
+    outline: 2px solid var(--quote-accent);
+    outline-offset: 1px;
+    border-color: var(--quote-accent);
+  }
+
+  .quote-submit {
+    width: 100%;
+    justify-content: center;
+    background: var(--quote-accent);
+    color: #F6EFE0;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .quote-submit:hover { background: var(--quote-accent-strong); }
+
+  .quote-disclaimer {
+    font-size: 0.78rem;
+    color: var(--quote-muted);
+    text-align: center;
+    margin-top: 0.9rem;
+  }
+
+  .quote-status {
+    font-size: 0.85rem;
+    color: var(--quote-accent-strong);
+    text-align: center;
+    margin-top: 0.75rem;
+    min-height: 1.2em;
+  }
+
+  @media (max-width: 520px) {
+    .quote-form-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Footer ---------- */
+  footer.band { padding-block: 3rem 2.25rem; }
+
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--band-line);
+  }
+
+  .footer-brand .brand-mark { color: var(--band-fg); font-size: 1.7rem; }
+  .footer-tagline {
+    color: var(--band-fg-soft);
+    font-size: 0.9rem;
+    max-width: 32ch;
+    margin-top: 0.6rem;
+  }
+
+  .social-block { text-align: right; }
+  .social-label {
+    display: block;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--band-fg-soft);
+    margin-bottom: 0.85rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.6rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--band-line);
+    border-radius: 50%;
+    color: var(--band-fg);
+    text-decoration: none;
+    transition: border-color 150ms ease, color 150ms ease;
+  }
+  .social-links a:hover { border-color: var(--band-accent); color: var(--band-accent-strong); }
+  .social-links svg { width: 18px; height: 18px; }
+
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-top: 1.5rem;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--band-fg-soft);
+  }
+
+  @media (max-width: 700px) {
+    .hero-grid, .about-grid, .quote-grid { grid-template-columns: 1fr; }
+    .hero-grid { align-items: start; }
+    .footer-top { flex-direction: column; }
+    .social-block { text-align: left; }
+  }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 24 24">
+    <path d="M12 3.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.3-5.5 3.3 1.4-6.1-4.7-4.1 6.2-.6z" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+    <path d="M3 6h18M3 12h18M3 18h18"/>
+  </symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+    <path d="M5 5l14 14M19 5L5 19"/>
+  </symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+    <path d="M5 4h3.2l1.6 4-2 1.6a11.5 11.5 0 0 0 5.6 5.6l1.6-2 4 1.6V18c0 1.1-.9 2-2 2C10.4 19.6 4.4 13.6 4 7c-.1-1.1.8-2 2-2z"/>
+  </symbol>
+  <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+    <path d="M12 21s7-7.4 7-12.6A7 7 0 0 0 5 8.4C5 13.6 12 21 12 21z"/>
+    <circle cx="12" cy="8.4" r="2.4"/>
+  </symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+    <circle cx="12" cy="12" r="8.2"/>
+    <path d="M12 7.5V12l3.2 2"/>
+  </symbol>
+  <symbol id="icon-area" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4">
+    <circle cx="12" cy="12" r="8.5" stroke-dasharray="2.5 3"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>
+  </symbol>
+</svg>
+
+<nav class="site-nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">Dilger</span>
+      <span class="brand-sub">Custom Cabinetry LLC</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="nav-call" href="tel:+14253513818">Call (425) 351-3818</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <svg><use href="#icon-menu" id="navToggleIcon"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <section class="hero band" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Bothell, Washington &middot; Est. 2025</span>
+        <h1>Dilger Custom Cabinetry</h1>
+        <p class="hero-tagline">Precision-built cabinets and carpentry for homes and businesses across King and Snohomish counties &mdash; licensed, bonded, and insured.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="tel:+14253513818">Call (425) 351-3818</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=21819+49th+Ave+SE%2C+Bothell%2C+WA+98021" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="spec-row">
+          <span class="spec-label">Shop</span>
+          <span class="spec-value">Bothell, WA</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Hours</span>
+          <span class="spec-value">9:00 AM &ndash; 5:00 PM</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Service Area</span>
+          <span class="spec-value">King &amp; Snohomish Co.</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Status</span>
+          <span class="spec-value">Licensed &middot; Bonded &middot; Insured</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="joinery on-band" aria-hidden="true"></div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Our Story</span>
+        <h2>Built On Precision</h2>
+      </div>
+      <div class="about-grid">
+        <p class="about-lede" data-reveal>&ldquo;Precision craftsmanship and attention to detail in every project &mdash; creating functional, beautiful additions to your home or business.&rdquo;</p>
+        <div class="about-body" data-reveal>
+          <p>Since 2025, Dilger Custom Cabinetry has been crafting high-quality, custom cabinets and carpentry solutions for residential and commercial spaces throughout King and Snohomish counties. Based in Bothell, Washington, we bring precision craftsmanship and attention to detail to every project, creating functional and beautiful additions to your home or business.</p>
+          <p>Licensed, bonded, and insured, we&rsquo;re committed to delivering excellence from design to installation.</p>
+          <p class="about-sign">&mdash; Dilger Custom Cabinetry LLC</p>
+          <ul class="credentials">
+            <li>Licensed</li>
+            <li>Bonded</li>
+            <li>Insured</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="background:var(--paper-raised); border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line);">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">What We Build</span>
+        <h2>Cabinetry &amp; Carpentry, Done Right</h2>
+      </div>
+      <div class="services-grid" data-reveal>
+        <div class="service-card">
+          <span class="service-num">01</span>
+          <h3>Custom Cabinets</h3>
+          <p>High-quality cabinetry built to fit your space, designed with precision from the first sketch to the final install.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">02</span>
+          <h3>Carpentry Solutions</h3>
+          <p>Skilled carpentry work that brings the same attention to detail to every corner of your home or business.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">03</span>
+          <h3>Residential Projects</h3>
+          <p>Functional, beautiful additions for homes throughout King and Snohomish counties.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">04</span>
+          <h3>Commercial Projects</h3>
+          <p>Durable, well-crafted builds for businesses that need work done right the first time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <div class="section-head" style="margin-inline:auto; text-align:center;" data-reveal>
+        <span class="eyebrow">Client Reviews</span>
+        <h2>What Clients Are Saying</h2>
+      </div>
+      <div class="reviews-empty" data-reveal>
+        <div class="stars" aria-hidden="true">
+          <svg><use href="#star"/></svg>
+          <svg><use href="#star"/></svg>
+          <svg><use href="#star"/></svg>
+          <svg><use href="#star"/></svg>
+          <svg><use href="#star"/></svg>
+        </div>
+        <h3>No reviews yet</h3>
+        <p>This shop is just getting started. Check back soon to see what clients have to say &mdash; or be the first to share your experience.</p>
+      </div>
+      <!-- Future: replace .reviews-empty with a review list + rating summary once reviews are collected. -->
+    </div>
+  </section>
+
+  <section id="contact" class="band">
+    <div class="wrap quote-grid">
+      <div>
+        <span class="eyebrow">Get In Touch</span>
+        <h2 class="quote-heading">Tell Us What You&rsquo;re Building</h2>
+        <p class="quote-sub">Give us a call, or send over a few details about your cabinets or carpentry project and we&rsquo;ll follow up to schedule a visit.</p>
+
+        <div class="quote-rows">
+          <div class="quote-row">
+            <svg><use href="#icon-phone"/></svg>
+            <div>
+              <span class="quote-row-label">Call Direct</span>
+              <span class="quote-row-value"><a href="tel:+14253513818">(425) 351-3818</a></span>
+            </div>
+          </div>
+          <div class="quote-row">
+            <svg><use href="#icon-pin"/></svg>
+            <div>
+              <span class="quote-row-label">Visit Us</span>
+              <span class="quote-row-value"><a href="https://www.google.com/maps/search/?api=1&query=21819+49th+Ave+SE%2C+Bothell%2C+WA+98021" target="_blank" rel="noopener">21819 49th Ave SE, Bothell, WA 98021</a></span>
+            </div>
+          </div>
+          <div class="quote-row">
+            <svg><use href="#icon-clock"/></svg>
+            <div>
+              <span class="quote-row-label">Hours</span>
+              <span class="quote-row-value">9:00 AM &ndash; 5:00 PM</span>
+            </div>
+          </div>
+          <div class="quote-row">
+            <svg><use href="#icon-area"/></svg>
+            <div>
+              <span class="quote-row-label">Service Area</span>
+              <span class="quote-row-value">King &amp; Snohomish Counties</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-card">
+        <span class="eyebrow">Request A Quote</span>
+        <form class="quote-form" id="quoteForm">
+          <div class="quote-form-grid">
+            <div class="quote-field">
+              <label for="qName">Name *</label>
+              <input type="text" id="qName" name="name" required>
+            </div>
+            <div class="quote-field">
+              <label for="qPhone">Phone *</label>
+              <input type="tel" id="qPhone" name="phone" required>
+            </div>
+          </div>
+          <div class="quote-field">
+            <label for="qEmail">Email *</label>
+            <input type="email" id="qEmail" name="email" required>
+          </div>
+          <div class="quote-field">
+            <label for="qType">Project Type *</label>
+            <select id="qType" name="projectType" required>
+              <option value="" disabled selected>Select one</option>
+              <option>Custom Cabinets</option>
+              <option>Carpentry Solutions</option>
+              <option>Residential Project</option>
+              <option>Commercial Project</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="quote-field">
+            <label for="qDetails">Project Details *</label>
+            <textarea id="qDetails" name="details" required placeholder="Tell us about your space, timeline, and what you'd like built."></textarea>
+          </div>
+          <button type="submit" class="btn quote-submit">Request My Quote &rarr;</button>
+          <p class="quote-status" id="quoteStatus" role="status" aria-live="polite"></p>
+          <p class="quote-disclaimer">No obligation. Your information is used only to respond to this request.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="band">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-mark">Dilger Custom Cabinetry</span>
+        <p class="footer-tagline">Custom cabinetry and carpentry, built in Bothell, WA and serving King &amp; Snohomish counties.</p>
+      </div>
+      <div class="social-block">
+        <span class="social-label">Follow The Shop</span>
+        <ul class="social-links">
+          <li>
+            <a href="https://www.facebook.com/p/Dilger-Custom-Cabinetry-61575147275567/" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M15 8.5h-2a1.5 1.5 0 0 0-1.5 1.5v2H15l-.4 3H11.5v6.5h-3V15h-2v-3h2V9.8A4 4 0 0 1 12.6 5.5H15z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/dilger_custom_cabinetry_llc/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="4" y="4" width="16" height="16" rx="4"/>
+                <circle cx="12" cy="12" r="3.5"/>
+                <circle cx="16.2" cy="7.8" r="0.6" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dilger Custom Cabinetry LLC</span>
+      <span>Licensed &middot; Bonded &middot; Insured</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    var icon = document.getElementById('navToggleIcon');
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      icon.setAttribute('href', open ? '#icon-close' : '#icon-menu');
+    });
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        icon.setAttribute('href', '#icon-menu');
+      });
+    });
+
+    var QUOTE_EMAIL = 'adam@dilgercustruction.com';
+    var form = document.getElementById('quoteForm');
+    var status = document.getElementById('quoteStatus');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = form.name.value.trim();
+        var phone = form.phone.value.trim();
+        var email = form.email.value.trim();
+        var type = form.projectType.value;
+        var details = form.details.value.trim();
+        var subject = 'Quote Request: ' + type + ' — ' + name;
+        var body = 'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email +
+          '\nProject Type: ' + type + '\n\nDetails:\n' + details;
+        var mailto = 'mailto:' + QUOTE_EMAIL + '?subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(body);
+        window.location.href = mailto;
+        status.textContent = 'Opening your email app to send this to us…';
+      });
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('[data-reveal]').forEach(function (el) {
+        observer.observe(el);
+      });
+    } else {
+      document.querySelectorAll('[data-reveal]').forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+    }
+  })();
+</script>

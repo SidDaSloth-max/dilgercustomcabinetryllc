@@ -1,0 +1,471 @@
+<title>Dilger SEO Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ink: #241C15;
+    --ink-soft: #5B4F42;
+    --ink-faint: #8A7A67;
+    --paper: #ECE3D0;
+    --paper-raised: #E0D4B8;
+    --paper-line: rgba(36,28,21,0.16);
+    --brass: #7C5E2C;
+    --brass-strong: #5E4620;
+    --band-bg: #1E160F;
+    --band-fg: #EEE3CC;
+    --band-fg-soft: #B9A98C;
+    --band-line: rgba(238,227,204,0.18);
+    --band-accent: #C69A55;
+    --ok: #4C7A52;
+    --warn-bg: #3A2415;
+    --warn-border: #7C5E2C;
+    --focus: #C69A55;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #ECE3D0;
+      --ink-soft: #C3B69E;
+      --ink-faint: #8F8168;
+      --paper: #171009;
+      --paper-raised: #241B11;
+      --paper-line: rgba(236,227,208,0.14);
+      --brass: #D3A968;
+      --brass-strong: #E7C083;
+      --band-bg: #0F0B06;
+      --band-fg: #EEE3CC;
+      --band-fg-soft: #A99A80;
+      --band-line: rgba(238,227,208,0.14);
+      --band-accent: #D3A968;
+      --ok: #7BAE81;
+      --warn-bg: #241708;
+      --warn-border: #D3A968;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #ECE3D0; --ink-soft: #C3B69E; --ink-faint: #8F8168;
+    --paper: #171009; --paper-raised: #241B11; --paper-line: rgba(236,227,208,0.14);
+    --brass: #D3A968; --brass-strong: #E7C083;
+    --band-bg: #0F0B06; --band-fg: #EEE3CC; --band-fg-soft: #A99A80; --band-line: rgba(238,227,208,0.14);
+    --band-accent: #D3A968; --ok: #7BAE81; --warn-bg: #241708; --warn-border: #D3A968;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    line-height: 0.98;
+    margin: 0;
+  }
+  a { color: var(--brass); }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+
+  .wrap { max-width: 980px; margin: 0 auto; padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.25rem, 4vw, 2rem) 4rem; }
+
+  header.top {
+    border-bottom: 1px solid var(--paper-line);
+    padding-bottom: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  h1 { font-size: clamp(2rem, 1.6vw + 1.6rem, 3rem); font-weight: 900; }
+  .lede { font-size: 1.1rem; color: var(--ink-soft); max-width: 62ch; margin: 1rem 0 0; }
+
+  .callout {
+    background: var(--warn-bg);
+    color: var(--band-fg);
+    border: 1px solid var(--warn-border);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+  }
+  .callout .eyebrow { color: var(--band-accent); }
+  .callout p { margin: 0.5rem 0 0; color: var(--band-fg-soft); font-size: 0.98rem; max-width: 68ch; }
+  .callout p strong { color: var(--band-fg); }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .columns { grid-template-columns: 1fr; }
+  }
+
+  .col-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 1.25rem;
+  }
+  .col-head h2 { font-size: 1.4rem; font-weight: 800; }
+  .progress {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .group { margin-bottom: 1.75rem; }
+  .group-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.6rem;
+  }
+
+  ul.items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .item {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    background: var(--paper-raised);
+    border: 1px solid var(--paper-line);
+    border-radius: 3px;
+    padding: 0.75rem 0.85rem;
+  }
+  .item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    accent-color: var(--brass);
+    cursor: pointer;
+  }
+  .item label { cursor: pointer; display: block; }
+  .item-title { font-weight: 600; font-size: 1rem; color: var(--ink); }
+  .item-detail { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.2rem; }
+  .item.checked { opacity: 0.55; }
+  .item.checked .item-title { text-decoration: line-through; text-decoration-color: var(--ink-faint); }
+
+  .badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brass-strong);
+    border: 1px solid var(--paper-line);
+    border-radius: 2px;
+    padding: 0.15rem 0.4rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  footer.note {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--paper-line);
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">Dilger Custom Cabinetry &middot; Site Roadmap</span>
+    <h1>SEO &amp; Launch Checklist</h1>
+    <p class="lede">Pulled from the rank-and-rent build template you sent over. Split into what only you can do (accounts, purchases, real business info) and what I can build directly on the site. Checkmarks save in this browser.</p>
+  </header>
+
+  <div class="callout">
+    <span class="eyebrow">Read this first</span>
+    <p><strong>The site currently lives at a private Claude Artifact URL, not on your own domain.</strong> That's fine for building and reviewing it together, but almost none of the template's SEO machinery — Search Console, GA4, sitemaps, backlinks, PageSpeed audits — can do real work until the site is deployed to a domain you own. Buying a domain and picking hosting is the one task that unblocks nearly everything else below, so it's first on your list.</p>
+  </div>
+
+  <div class="columns">
+    <div class="col">
+      <div class="col-head">
+        <h2>What You Need To Do</h2>
+        <span class="progress" data-progress="you">0 / 0</span>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Foundation — do this first</p>
+        <ul class="items" data-list="you">
+          <li class="item" data-id="you-domain-hosting">
+            <input type="checkbox" id="you-domain-hosting"><label for="you-domain-hosting">
+              <div class="item-title">Buy a domain + pick hosting</div>
+              <div class="item-detail">Something like dilgercustomcabinetry.com, hosted somewhere simple like Netlify. Nearly everything below depends on this existing.</div>
+            </label>
+          </li>
+          <li class="item" data-id="you-domain-mismatch">
+            <input type="checkbox" id="you-domain-mismatch"><label for="you-domain-mismatch">
+              <div class="item-title">Resolve the domain mismatch</div>
+              <div class="item-detail">Quote requests currently route to adam@dilgercustruction.com. Confirm that's the correct spelling/domain before it's live anywhere permanent — inconsistent contact info hurts local SEO trust.</div>
+            </label>
+          </li>
+          <li class="item" data-id="you-hours">
+            <input type="checkbox" id="you-hours"><label for="you-hours">
+              <div class="item-title">Confirm your full weekly hours</div>
+              <div class="item-detail">Which days you're actually open/closed, not just "9–5." Needed for accurate schema markup and for visitors planning to call or stop by.</div>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Accounts &amp; verification</p>
+        <ul class="items" data-list="you">
+          <li class="item" data-id="you-gbp">
+            <input type="checkbox" id="you-gbp"><label for="you-gbp">
+              <div class="item-title">Create a Google Business Profile</div>
+              <div class="item-detail">For Dilger Custom Cabinetry LLC. This is also the real path to collecting genuine reviews for the site's Reviews section.</div>
+            </label>
+          </li>
+          <li class="item" data-id="you-search-console">
+            <input type="checkbox" id="you-search-console"><label for="you-search-console">
+              <div class="item-title">Set up Google Search Console</div>
+              <div class="item-detail">DNS TXT verification on your new domain, then submit the sitemap once the site is live. Do this the day the site goes live — ranking history only starts once verified.</div>
+            </label>
+          </li>
+          <li class="item" data-id="you-ga4">
+            <input type="checkbox" id="you-ga4"><label for="you-ga4">
+              <div class="item-title">Create a Google Analytics 4 property</div>
+              <div class="item-detail">Name it something like "Custom Cabinetry – Bothell," then send me the Measurement ID so I can wire up tracking.</div>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Content only you have</p>
+        <ul class="items" data-list="you">
+          <li class="item" data-id="you-photos">
+            <input type="checkbox" id="you-photos"><label for="you-photos">
+              <div class="item-title">Real project photos</div>
+              <div class="item-detail">The site has zero real photos right now. Finished cabinet/carpentry shots would strengthen the page and give me something honest to write alt text for.</div>
+            </label>
+          </li>
+          <li class="item" data-id="you-reviews">
+            <input type="checkbox" id="you-reviews"><label for="you-reviews">
+              <div class="item-title">Real reviews as they come in</div>
+              <div class="item-detail">From Google or Facebook once you have them — send them over and I'll add them to the Reviews section. I checked and none exist publicly yet.</div>
+            </label>
+          </li>
+          <li class="item" data-id="you-target-cities">
+            <input type="checkbox" id="you-target-cities"><label for="you-target-cities">
+              <div class="item-title">Confirm target service-area towns</div>
+              <div class="item-detail">I can propose nearby King/Snohomish towns for local SEO pages, but you should sign off on the actual list before I build them.</div>
+            </label>
+          </li>
+          <li class="item" data-id="you-license">
+            <input type="checkbox" id="you-license"><label for="you-license">
+              <div class="item-title">Decide on showing a license number</div>
+              <div class="item-detail">Optional — the site already says "Licensed, Bonded, Insured." Displaying the actual number publicly is your call.</div>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Off-page — ongoing, after launch</p>
+        <ul class="items" data-list="you">
+          <li class="item" data-id="you-directories">
+            <input type="checkbox" id="you-directories"><label for="you-directories">
+              <div class="item-title">Local directories &amp; chamber of commerce</div>
+              <div class="item-detail">Real local citations and backlinks move the needle far more than volume of links.</div>
+            </label>
+          </li>
+          <li class="item" data-id="you-backlink-audit">
+            <input type="checkbox" id="you-backlink-audit"><label for="you-backlink-audit">
+              <div class="item-title">Periodic backlink checkups</div>
+              <div class="item-detail">Ahrefs' free Backlink Checker. Use Search Console's Disavow Tool if spammy links ever show up — needs your Google login.</div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-head">
+        <h2>What I Can Do</h2>
+        <span class="progress" data-progress="me">0 / 0</span>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Ready now, on the current site</p>
+        <ul class="items" data-list="me">
+          <li class="item" data-id="me-schema">
+            <input type="checkbox" id="me-schema"><label for="me-schema">
+              <div class="item-title">Add LocalBusiness schema markup</div>
+              <div class="item-detail">Name, address, phone, service area, and category as structured data.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-og">
+            <input type="checkbox" id="me-og"><label for="me-og">
+              <div class="item-title">Add Open Graph + Twitter Card tags</div>
+              <div class="item-detail">So shared links render with a proper title, description, and preview.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-meta">
+            <input type="checkbox" id="me-meta"><label for="me-meta">
+              <div class="item-title">Add meta description, canonical, lang</div>
+              <div class="item-detail">Standard on-page basics — most only fully matter once the site is on its own domain.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-touch-icon">
+            <input type="checkbox" id="me-touch-icon"><label for="me-touch-icon">
+              <div class="item-title">Generate an apple-touch-icon</div>
+              <div class="item-detail">180×180, linked alongside the current favicon.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-content-depth">
+            <input type="checkbox" id="me-content-depth"><label for="me-content-depth">
+              <div class="item-title">Deepen the on-page content</div>
+              <div class="item-detail">A fuller service-area section with natural "near me" phrasing and material/service variations — the page is a bit thin for local-service SEO right now.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-contrast">
+            <input type="checkbox" id="me-contrast"><label for="me-contrast">
+              <div class="item-title">Full WCAG AA contrast pass</div>
+              <div class="item-detail">Already caught and fixed one issue in the nav "Call" button — worth checking the rest of the palette systematically.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-ga4-code">
+            <input type="checkbox" id="me-ga4-code"><label for="me-ga4-code">
+              <div class="item-title">Prep GA4 + call-click tracking code</div>
+              <div class="item-detail">Ready to drop your Measurement ID into the moment you have one — every tel: link gets its own click event.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-phone-constant">
+            <input type="checkbox" id="me-phone-constant"><label for="me-phone-constant">
+              <div class="item-title">Keep the phone number swappable</div>
+              <div class="item-detail">One spot in the code, so switching to a real call-tracking number (CallRail) later is a one-line change, not a site-wide edit.</div>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Blocked until domain + hosting exist</p>
+        <ul class="items" data-list="me">
+          <li class="item" data-id="me-multipage">
+            <input type="checkbox" id="me-multipage"><label for="me-multipage">
+              <div class="item-title">Rebuild as a real multi-page site</div>
+              <div class="item-detail">Homepage + optional service pages + individual location pages for nearby towns — each genuinely distinct, never templated city-name swaps.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-sitemap">
+            <input type="checkbox" id="me-sitemap"><label for="me-sitemap">
+              <div class="item-title">Generate sitemap.xml + robots.txt</div>
+              <div class="item-detail">Only meaningful once real page URLs exist to list.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-cache">
+            <input type="checkbox" id="me-cache"><label for="me-cache">
+              <div class="item-title">Set Cache-Control headers</div>
+              <div class="item-detail">Via a Netlify `_headers` file once hosting is picked.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-webp">
+            <input type="checkbox" id="me-webp"><label for="me-webp">
+              <div class="item-title">Convert photos to WebP</div>
+              <div class="item-detail">Once real photos exist — wrapped in sized `<picture>` markup for performance.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-live-audit">
+            <input type="checkbox" id="me-live-audit"><label for="me-live-audit">
+              <div class="item-title">Run PageSpeed + Seobility on the live URL</div>
+              <div class="item-detail">Has to be the real production domain, not the Claude Artifact preview, for the results to mean anything.</div>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Ongoing, once live</p>
+        <ul class="items" data-list="me">
+          <li class="item" data-id="me-no-fab">
+            <input type="checkbox" id="me-no-fab"><label for="me-no-fab">
+              <div class="item-title">No fabricated reviews or credentials</div>
+              <div class="item-detail">Already true across the site — I'll keep it that way as it grows.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-nap">
+            <input type="checkbox" id="me-nap"><label for="me-nap">
+              <div class="item-title">Keep NAP identical everywhere</div>
+              <div class="item-detail">Name, address, and phone stay character-for-character consistent as new pages and listings get added.</div>
+            </label>
+          </li>
+          <li class="item" data-id="me-lastmod">
+            <input type="checkbox" id="me-lastmod"><label for="me-lastmod">
+              <div class="item-title">Bump sitemap lastmod on changes</div>
+              <div class="item-detail">Once the site is live, this signals freshness to Google whenever content changes.</div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="note">
+    Checked state is saved only in this browser (localStorage), so it won't follow you to another device. Tell me when you're ready to tackle the domain/hosting step, or hand me anything from the "content only you have" group and I'll fold it in.
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var STORAGE_PREFIX = 'dilger-seo-roadmap:';
+    var items = document.querySelectorAll('.item input[type="checkbox"]');
+
+    function load(id) {
+      try { return localStorage.getItem(STORAGE_PREFIX + id) === '1'; } catch (e) { return false; }
+    }
+    function save(id, val) {
+      try { localStorage.setItem(STORAGE_PREFIX + id, val ? '1' : '0'); } catch (e) {}
+    }
+
+    function updateProgress() {
+      ['you', 'me'].forEach(function (key) {
+        var list = document.querySelectorAll('[data-list="' + key + '"] input[type="checkbox"]');
+        var total = list.length;
+        var done = 0;
+        list.forEach(function (cb) { if (cb.checked) done++; });
+        var el = document.querySelector('[data-progress="' + key + '"]');
+        if (el) el.textContent = done + ' / ' + total;
+      });
+    }
+
+    items.forEach(function (cb) {
+      var wrapper = cb.closest('.item');
+      var id = wrapper.getAttribute('data-id');
+      cb.checked = load(id);
+      if (cb.checked) wrapper.classList.add('checked');
+      cb.addEventListener('change', function () {
+        save(id, cb.checked);
+        wrapper.classList.toggle('checked', cb.checked);
+        updateProgress();
+      });
+    });
+
+    updateProgress();
+  })();
+</script>
