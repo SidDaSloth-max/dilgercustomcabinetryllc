@@ -146,6 +146,10 @@
     background: color-mix(in srgb, var(--paper) 88%, transparent);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--paper-line);
+    box-shadow: 0 6px 16px -8px rgba(0,0,0,0.25);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .site-nav { transition: transform 450ms ease-out; }
   }
 
   .nav-row {
@@ -208,7 +212,8 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--band-accent);
+    background-color: var(--band-accent);
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0) 60%);
     text-decoration: none;
     font-family: 'IBM Plex Mono', 'Courier New', monospace;
     font-size: 0.75rem;
@@ -217,16 +222,25 @@
     padding: 0.55rem 0.95rem;
     border-radius: 2px;
     white-space: nowrap;
-    transition: background 150ms ease;
+    box-shadow: 0 2px 0 color-mix(in srgb, var(--band-accent) 60%, black), 0 5px 10px -4px rgba(0,0,0,0.4);
+    transition: background-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
   }
   .nav-links a.nav-call,
   .nav-links a.nav-call:hover {
     color: #1E160F;
     border-bottom-color: transparent;
   }
-  .nav-call:hover,
+  .nav-call:hover {
+    background-color: color-mix(in srgb, var(--band-accent) 88%, black);
+    box-shadow: 0 3px 0 color-mix(in srgb, var(--band-accent) 60%, black), 0 8px 14px -4px rgba(0,0,0,0.45);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .nav-call:hover { transform: translateY(-1px); }
+  }
   .nav-call:active {
-    background: color-mix(in srgb, var(--band-accent) 78%, black);
+    background-color: color-mix(in srgb, var(--band-accent) 78%, black);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--band-accent) 60%, black), 0 2px 6px -2px rgba(0,0,0,0.4);
+    transform: translateY(1px);
   }
 
   .nav-toggle {
@@ -317,23 +331,40 @@
     text-transform: uppercase;
     padding: 0.9rem 1.5rem;
     border-radius: 2px;
-    transition: transform 150ms ease, background 150ms ease, color 150ms ease, border-color 150ms ease;
+    transition: transform 150ms ease, background-color 150ms ease, color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
   }
   @media (prefers-reduced-motion: no-preference) {
     .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(1px); }
   }
 
   .btn-primary {
-    background: var(--band-accent);
+    background-color: var(--band-accent);
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0) 60%);
     color: #1E160F;
+    box-shadow: 0 3px 0 color-mix(in srgb, var(--band-accent) 60%, black), 0 10px 20px -8px rgba(0,0,0,0.5);
   }
-  .btn-primary:hover { background: var(--band-accent-strong); }
+  .btn-primary:hover {
+    background-color: var(--band-accent-strong);
+    box-shadow: 0 4px 0 color-mix(in srgb, var(--band-accent-strong) 60%, black), 0 14px 26px -8px rgba(0,0,0,0.55);
+  }
+  .btn-primary:active {
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--band-accent) 60%, black), 0 4px 10px -4px rgba(0,0,0,0.45);
+  }
 
   .btn-ghost {
     border: 1px solid var(--band-line);
     color: var(--band-fg);
+    background-color: transparent;
+    box-shadow: 0 2px 8px -4px rgba(0,0,0,0.3);
   }
-  .btn-ghost:hover { border-color: var(--band-accent); color: var(--band-accent-strong); }
+  .btn-ghost:hover {
+    border-color: var(--band-accent);
+    color: var(--band-accent-strong);
+    background-color: color-mix(in srgb, var(--band-accent) 12%, transparent);
+    box-shadow: 0 6px 16px -6px rgba(0,0,0,0.4);
+  }
+  .btn-ghost:active { box-shadow: 0 2px 6px -3px rgba(0,0,0,0.35); }
 
   .hero-card {
     border: 1px solid var(--band-line);
@@ -659,13 +690,26 @@
   .quote-submit {
     width: 100%;
     justify-content: center;
-    background: var(--quote-accent);
+    background-color: var(--quote-accent);
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 60%);
     color: #F6EFE0;
     border: none;
     cursor: pointer;
     font-size: 0.9rem;
+    box-shadow: 0 3px 0 color-mix(in srgb, var(--quote-accent) 60%, black), 0 10px 20px -8px rgba(0,0,0,0.4);
+    transition: transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
   }
-  .quote-submit:hover { background: var(--quote-accent-strong); }
+  .quote-submit:hover {
+    background-color: var(--quote-accent-strong);
+    box-shadow: 0 4px 0 color-mix(in srgb, var(--quote-accent-strong) 60%, black), 0 14px 24px -8px rgba(0,0,0,0.45);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .quote-submit:hover { transform: translateY(-2px); }
+    .quote-submit:active { transform: translateY(1px); }
+  }
+  .quote-submit:active {
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--quote-accent) 60%, black), 0 4px 10px -4px rgba(0,0,0,0.35);
+  }
 
   .quote-disclaimer {
     font-size: 0.78rem;
@@ -1054,6 +1098,38 @@
         icon.setAttribute('href', '#icon-menu');
       });
     });
+
+    var siteNav = document.querySelector('.site-nav');
+    if (siteNav && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      var revealProgress = 0;
+      var lastY = window.scrollY;
+
+      function applyReveal() {
+        siteNav.style.transform = 'translateY(' + (-(1 - revealProgress) * 100) + '%)';
+      }
+
+      siteNav.style.transform = 'translateY(-100%)';
+
+      window.addEventListener('scroll', function () {
+        var y = window.scrollY;
+        var delta = y - lastY;
+        lastY = y;
+        if (y <= 2) {
+          revealProgress = 0;
+        } else {
+          var step = Math.min(Math.abs(delta) / 320, 1);
+          revealProgress = delta > 0
+            ? Math.min(1, revealProgress + step)
+            : Math.max(0, revealProgress - step);
+        }
+        applyReveal();
+      }, { passive: true });
+
+      siteNav.addEventListener('focusin', function () {
+        revealProgress = 1;
+        applyReveal();
+      });
+    }
 
     var QUOTE_EMAIL = 'adam@dilgercustomcabinetry.com';
     var form = document.getElementById('quoteForm');
