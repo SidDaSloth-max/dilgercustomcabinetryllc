@@ -162,10 +162,17 @@
 
   .brand {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     line-height: 1;
     text-decoration: none;
     color: var(--ink);
+  }
+
+  .brand img {
+    height: 42px;
+    width: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px -3px rgba(0,0,0,0.4);
   }
 
   .brand-mark {
@@ -940,8 +947,7 @@
 <nav class="site-nav">
   <div class="wrap nav-row">
     <a class="brand" href="#home">
-      <span class="brand-mark">Dilger</span>
-      <span class="brand-sub">Custom Cabinetry LLC</span>
+      <img src="images/logo.png" alt="Dilger Custom Cabinetry" width="1249" height="420">
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
