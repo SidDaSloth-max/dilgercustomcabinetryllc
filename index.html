@@ -171,9 +171,17 @@
   .brand img {
     height: 42px;
     width: auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px -3px rgba(0,0,0,0.4);
   }
+
+  .brand .logo-light { display: block; }
+  .brand .logo-dark { display: none; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .brand .logo-light { display: none; }
+    :root:not([data-theme="light"]) .brand .logo-dark { display: block; }
+  }
+  :root[data-theme="dark"] .brand .logo-light { display: none; }
+  :root[data-theme="dark"] .brand .logo-dark { display: block; }
 
   .brand-mark {
     font-family: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
@@ -947,7 +955,8 @@
 <nav class="site-nav">
   <div class="wrap nav-row">
     <a class="brand" href="#home">
-      <img src="images/logo.png" alt="Dilger Custom Cabinetry" width="1249" height="420">
+      <img class="logo-light" src="images/logo-light.png" alt="Dilger Custom Cabinetry" width="1249" height="420">
+      <img class="logo-dark" src="images/logo-dark.png" alt="Dilger Custom Cabinetry" width="1249" height="420">
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
