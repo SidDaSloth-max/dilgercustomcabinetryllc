@@ -111,6 +111,8 @@
         if (submitBtn) submitBtn.disabled = true;
         status.textContent = 'Sending…';
 
+        var projectType = form.elements.projectType ? form.elements.projectType.value : '';
+
         fetch(form.getAttribute('action') || '/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -119,6 +121,13 @@
           .then(function (res) {
             if (!res.ok) throw new Error('Bad response');
             status.textContent = 'Thanks — we’ve got your request and will follow up soon.';
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', {
+                event_category: 'engagement',
+                event_label: 'quote_form',
+                project_type: projectType
+              });
+            }
             form.reset();
           })
           .catch(function () {
