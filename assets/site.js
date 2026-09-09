@@ -102,24 +102,31 @@
       setActive(0);
     }
 
-    var QUOTE_EMAIL = 'adam@dilgercustomcabinetry.com';
     var form = document.getElementById('quoteForm');
     var status = document.getElementById('quoteStatus');
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var name = form.name.value.trim();
-        var phone = form.phone.value.trim();
-        var email = form.email.value.trim();
-        var type = form.projectType.value;
-        var details = form.details.value.trim();
-        var subject = 'Quote Request: ' + type + ' — ' + name;
-        var body = 'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email +
-          '\nProject Type: ' + type + '\n\nDetails:\n' + details;
-        var mailto = 'mailto:' + QUOTE_EMAIL + '?subject=' + encodeURIComponent(subject) +
-          '&body=' + encodeURIComponent(body);
-        window.location.href = mailto;
-        status.textContent = 'Opening your email app to send this to us…';
+        var submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+        status.textContent = 'Sending…';
+
+        fetch(form.getAttribute('action') || '/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('Bad response');
+            status.textContent = 'Thanks — we’ve got your request and will follow up soon.';
+            form.reset();
+          })
+          .catch(function () {
+            status.textContent = 'Something went wrong sending that. Please call us instead at (425) 351-3818.';
+          })
+          .finally(function () {
+            if (submitBtn) submitBtn.disabled = false;
+          });
       });
     }
 
