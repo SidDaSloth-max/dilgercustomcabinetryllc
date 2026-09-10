@@ -126,6 +126,7 @@
       <li><a href="/index.html#locations">Locations</a></li>
       <li><a href="/index.html#reviews">Reviews</a></li>
       <li><a href="/index.html#contact">Contact</a></li>
+      <li><a href="/index.html#website-issue">Website Issue?</a></li>
       <li><a class="nav-call" href="tel:+14253513818" data-call-label="header_phone_button">Call (425) 351-3818</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
@@ -403,7 +404,7 @@
 
       <div class="quote-card">
         <span class="eyebrow">Request A Quote</span>
-        <form class="quote-form" id="quoteForm" name="quote-request" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field">
+        <form class="quote-form" id="quoteForm" name="quote-request" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" data-ga-event="generate_lead" data-ga-label="quote_form" data-success-message="Thanks — we&rsquo;ve got your request and will follow up soon.">
           <input type="hidden" name="form-name" value="quote-request">
           <p style="position:absolute; left:-9999px;" aria-hidden="true">
             <label>Don&rsquo;t fill this out if you&rsquo;re human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
@@ -438,9 +439,22 @@
             <textarea id="qDetails" name="details" required placeholder="Tell us about your space, timeline, and what you'd like built."></textarea>
           </div>
           <button type="submit" class="btn quote-submit">Request My Quote &rarr;</button>
-          <p class="quote-status" id="quoteStatus" role="status" aria-live="polite"></p>
+          <p class="quote-status form-status" id="quoteStatus" role="status" aria-live="polite"></p>
           <p class="quote-disclaimer">No obligation. Your information is used only to respond to this request.</p>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="website-issue" style="background:var(--paper-raised); border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line);">
+    <div class="wrap" style="text-align:center;">
+      <div class="section-head" style="margin-inline:auto; text-align:center;" data-reveal>
+        <span class="eyebrow">Found A Problem?</span>
+        <h2>Spot A Website Issue?</h2>
+        <p style="margin-top:1rem; color:var(--ink-soft); max-width:56ch; margin-inline:auto;">Broken link, typo, or something not working right on the site? Let us know and we&rsquo;ll get it fixed.</p>
+      </div>
+      <div class="hero-ctas" style="justify-content:center; margin-top:2rem;" data-reveal>
+        <a class="btn btn-primary" href="/feedback.html">Submit Website Feedback</a>
       </div>
     </div>
   </section>
@@ -483,6 +497,10 @@
             </a>
           </li>
         </ul>
+        <a class="feedback-link" href="/feedback.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-4.5 4V16H4V5z"/><path d="M12 9.2v3M12 14.6h.01"/></svg>
+          Submit Website Feedback
+        </a>
       </div>
     </div>
     <div class="footer-bottom">

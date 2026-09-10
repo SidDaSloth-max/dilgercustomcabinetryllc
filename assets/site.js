@@ -102,16 +102,21 @@
       setActive(0);
     }
 
-    var form = document.getElementById('quoteForm');
-    var status = document.getElementById('quoteStatus');
-    if (form) {
+    document.querySelectorAll('form[data-netlify]').forEach(function (form) {
+      var status = form.querySelector('.form-status');
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var submitBtn = form.querySelector('button[type="submit"]');
         if (submitBtn) submitBtn.disabled = true;
-        status.textContent = 'Sending…';
+        if (status) status.textContent = 'Sending…';
 
         var projectType = form.elements.projectType ? form.elements.projectType.value : '';
+        var gaEvent = form.getAttribute('data-ga-event');
+        var gaLabel = form.getAttribute('data-ga-label') || form.getAttribute('name') || 'form';
+        var successMessage = form.getAttribute('data-success-message') ||
+          'Thanks — we’ve got your submission and will follow up soon.';
+        var errorMessage = form.getAttribute('data-error-message') ||
+          'Something went wrong sending that. Please call us instead at (425) 351-3818.';
 
         fetch(form.getAttribute('action') || '/', {
           method: 'POST',
@@ -120,24 +125,24 @@
         })
           .then(function (res) {
             if (!res.ok) throw new Error('Bad response');
-            status.textContent = 'Thanks — we’ve got your request and will follow up soon.';
-            if (typeof gtag === 'function') {
-              gtag('event', 'generate_lead', {
+            if (status) status.textContent = successMessage;
+            if (gaEvent && typeof gtag === 'function') {
+              gtag('event', gaEvent, {
                 event_category: 'engagement',
-                event_label: 'quote_form',
+                event_label: gaLabel,
                 project_type: projectType
               });
             }
             form.reset();
           })
           .catch(function () {
-            status.textContent = 'Something went wrong sending that. Please call us instead at (425) 351-3818.';
+            if (status) status.textContent = errorMessage;
           })
           .finally(function () {
             if (submitBtn) submitBtn.disabled = false;
           });
       });
-    }
+    });
 
     document.querySelectorAll('[data-call-label]').forEach(function (a) {
       a.addEventListener('click', function () {

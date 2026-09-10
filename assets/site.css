@@ -1048,6 +1048,23 @@
   }
   .footer-areas a:hover { color: var(--band-accent); border-color: var(--band-accent); }
 
+  .feedback-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.1rem;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--band-fg-soft);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 150ms ease, border-color 150ms ease;
+  }
+  .feedback-link:hover { color: var(--band-accent); border-color: var(--band-accent); }
+  .feedback-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+
   /* ---------- Mid-page CTA band ---------- */
   .cta-band {
     text-align: center;

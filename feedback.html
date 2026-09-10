@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Feedback | Dilger Custom Cabinetry</title>
+<meta name="description" content="Report a website issue or share feedback about the Dilger Custom Cabinetry website.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://dilgercustomcabinetry.com/feedback.html">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZHT3YH5XT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-DZHT3YH5XT');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Source+Serif+4:ital,wght@0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+</svg>
+
+<nav class="site-nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="/index.html">
+      <img class="logo-light" src="/images/logo-light.png" alt="Dilger Custom Cabinetry" width="1249" height="420">
+      <img class="logo-dark" src="/images/logo-dark.png" alt="Dilger Custom Cabinetry" width="1249" height="420">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/index.html#about">About</a></li>
+      <li><a href="/index.html#services">Services</a></li>
+      <li><a href="/index.html#locations">Locations</a></li>
+      <li><a href="/index.html#reviews">Reviews</a></li>
+      <li><a href="/index.html#contact">Contact</a></li>
+      <li><a href="/index.html#website-issue">Website Issue?</a></li>
+      <li><a class="nav-call" href="tel:+14253513818" data-call-label="header_phone_button">Call (425) 351-3818</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <svg><use href="#icon-menu" id="navToggleIcon"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-hero band">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="/index.html">Home</a><span aria-hidden="true">/</span>
+        <span>Website Feedback</span>
+      </div>
+      <span class="eyebrow">Website Feedback</span>
+      <h1>Found An Issue? Let Us Know</h1>
+      <p class="hero-tagline">Broken link, typo, something not displaying right, or just an idea for how the site could be better &mdash; tell us below and we&rsquo;ll take a look.</p>
+    </div>
+  </section>
+  <div class="joinery on-band" aria-hidden="true"></div>
+
+  <section>
+    <div class="wrap" style="max-width:640px;">
+      <div class="quote-card">
+        <span class="eyebrow">Report An Issue</span>
+        <form class="quote-form" id="feedbackForm" name="website-feedback" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" data-ga-event="website_feedback_submit" data-ga-label="feedback_form" data-success-message="Thanks — we&rsquo;ve got your feedback and will take a look." data-error-message="Something went wrong sending that. Please email bdilger36@gmail.com directly instead.">
+          <input type="hidden" name="form-name" value="website-feedback">
+          <p style="position:absolute; left:-9999px;" aria-hidden="true">
+            <label>Don&rsquo;t fill this out if you&rsquo;re human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+          <div class="quote-form-grid">
+            <div class="quote-field">
+              <label for="fName">Name</label>
+              <input type="text" id="fName" name="name">
+            </div>
+            <div class="quote-field">
+              <label for="fEmail">Email</label>
+              <input type="email" id="fEmail" name="email" placeholder="Optional, if you want a reply">
+            </div>
+          </div>
+          <div class="quote-field">
+            <label for="fType">Type Of Feedback *</label>
+            <select id="fType" name="issueType" required>
+              <option value="" disabled selected>Select one</option>
+              <option>Broken Link Or Button</option>
+              <option>Something Displaying Incorrectly</option>
+              <option>Incorrect Information</option>
+              <option>Design Or Layout Feedback</option>
+              <option>General Suggestion</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="quote-field">
+            <label for="fMessage">What&rsquo;s The Issue? *</label>
+            <textarea id="fMessage" name="message" required placeholder="Tell us what you saw, and which page it was on if you can."></textarea>
+          </div>
+          <button type="submit" class="btn quote-submit">Submit Feedback &rarr;</button>
+          <p class="quote-status form-status" role="status" aria-live="polite"></p>
+          <p class="quote-disclaimer">Feedback goes directly to the site owner. This isn&rsquo;t a support line for cabinetry or carpentry projects &mdash; for that, <a href="/index.html#contact">request a quote</a> instead.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="band">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-mark">Dilger Custom Cabinetry</span>
+        <p class="footer-tagline">Custom cabinetry and carpentry, built in Bothell, WA and serving King &amp; Snohomish counties.</p>
+        <ul class="footer-areas">
+          <li><a href="/index.html#locations">Service Area</a></li>
+          <li><a href="/locations/woodinville.html">Woodinville</a></li>
+          <li><a href="/locations/kirkland.html">Kirkland</a></li>
+          <li><a href="/locations/redmond.html">Redmond</a></li>
+          <li><a href="/locations/bellevue.html">Bellevue</a></li>
+          <li><a href="/locations/everett.html">Everett</a></li>
+          <li><a href="/locations/snohomish.html">Snohomish</a></li>
+        </ul>
+      </div>
+      <div class="social-block">
+        <span class="social-label">Follow The Shop</span>
+        <ul class="social-links">
+          <li>
+            <a href="https://www.facebook.com/p/Dilger-Custom-Cabinetry-61575147275567/" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M15 8.5h-2a1.5 1.5 0 0 0-1.5 1.5v2H15l-.4 3H11.5v6.5h-3V15h-2v-3h2V9.8A4 4 0 0 1 12.6 5.5H15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/dilger_custom_cabinetry_llc/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.2" cy="7.8" r="0.6" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </li>
+        </ul>
+        <a class="feedback-link" href="/feedback.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-4.5 4V16H4V5z"/><path d="M12 9.2v3M12 14.6h.01"/></svg>
+          Submit Website Feedback
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dilger Custom Cabinetry LLC</span>
+      <span>Licensed &middot; Bonded &middot; Insured</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
