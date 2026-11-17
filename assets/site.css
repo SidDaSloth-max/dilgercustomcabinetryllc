@@ -975,6 +975,7 @@
   .content-columns img {
     border-radius: 4px;
     width: 100%;
+    height: 340px;
     object-fit: cover;
     box-shadow: 0 14px 30px -14px rgba(0,0,0,0.35);
   }
